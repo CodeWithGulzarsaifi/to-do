@@ -73,6 +73,8 @@ form button:hover {
     align-items: center;
     transition: 0.5s;
     border-radius: 2rem;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .todo li {
@@ -154,4 +156,97 @@ select {
 .select::hover::after {
     background: white;
     color: rgb(255, 200, 0);
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    header, 
+    form {
+        flex-direction: column;
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    form input, 
+    form button {
+        width: 100%;
+        font-size: 1.4rem;
+        padding-left: 0.8rem;
+        margin: 0.3rem 0;
+        border-radius: 1rem;
+    }
+
+    form button {
+        margin-left: 0;
+        width: 9rem;
+    }
+
+    .todo-list {
+        min-width: 90%;
+    }
+    .filter-todo{
+        width: 9rem;
+    }
+
+    .todo {
+        font-size: 1.2rem;
+        flex-direction: row;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 0.5rem 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .todo:hover {
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .todo li {
+        width: 100%;
+        padding-bottom: 0.5rem;
+    }
+
+    .complete-btn, 
+    .trash-btn {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        margin-top: 0.3rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .complete-btn:hover {
+        background-color: #e6b800;
+        box-shadow: 0 4px 12px rgba(230,184,0,0.4);
+    }
+
+    .trash-btn:hover {
+        background-color: #a0a0a0;
+        box-shadow: 0 4px 12px rgba(160,160,160,0.4);
+    }
+
+    .todo-container {
+        padding: 0 1rem;
+    }
+
+    select {
+        width: 100%;
+        height: 3rem;
+        padding: 0.5rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        border-radius: 1rem;
+        transition: box-shadow 0.3s ease;
+    }
+
+    select:hover, select:focus {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        outline: none;
+    }
+
+    .select {
+        margin: 0.5rem 0;
+        border-radius: 1rem;
+    }
 }
